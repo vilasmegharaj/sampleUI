@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <button id="reset-convo"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" aria-labelledby="item-title-menu-link-reset"><title id="item-title-menu-link-reset">Reset conversation</title><path fill="#ffffff" fill-rule="evenodd" d="M3.888 11.409c.236-.38.929-.493 1.309-.153.069.06 2.607 1.98 2.607 1.98.327.239.408.795.164 1.113-.164.239-.41.318-.654.318-.163 0-.326-.08-.49-.16l-1.055-.755c.747 2.599 3.122 4.47 5.982 4.47 1.689 0 3.2-.622 4.446-1.777a.862.862 0 0 1 1.246 0 .858.858 0 0 1 0 1.244C15.93 19.2 13.885 20 11.75 20a7.97 7.97 0 0 1-7.686-5.74l-.673.964c-.156.248-.391.33-.627.33-.157 0-.314-.082-.47-.165-.315-.247-.393-.826-.158-1.157l1.75-2.824m7.563-7.41a7.969 7.969 0 0 1 7.686 5.74l.672-.964c.157-.247.392-.33.628-.33.157 0 .314.083.47.166.314.247.393.826.157 1.157 0 0-1.656 2.673-1.751 2.824-.235.379-.928.493-1.308.153a468.86 468.86 0 0 0-2.607-1.981c-.327-.238-.408-.794-.164-1.113.164-.238.408-.318.653-.318.164 0 .327.08.49.159l1.055.757c-.747-2.6-3.122-4.47-5.981-4.47-1.69 0-3.201.62-4.446 1.777a.86.86 0 0 1-1.245 0 .858.858 0 0 1 0-1.245C7.269 4.8 9.316 4 11.449 4"></path></svg></button>
+    </div>
+  <div class="chat-overlay chat-overlay-closed">
+     <div class="chat-overlay-banner">
+        <div class="chat-overlay-banner-title">Amelia</div>
+        <div class="chat-overlay-banner-helper">Virtual Assistant</div>
+        <div class="chat-overlay-banner-description">Hello, I am Amelia. How can I help you today?</div>
+    </div>
+    <div class="header-logo">
+       <img class="logo" alt="logo" />
+        <!-- <img class="chat-overlay-close" src="/close.png" alt="toggle chat overlay" /> -->
+        <svg class="chat-overlay-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <line x1="4" y1="4" x2="20" y2="20" stroke="white" stroke-width="3"></line>
+          <line x1="20" y1="4" x2="4" y2="20" stroke="white" stroke-width="3"></line>
+        </svg>
+        <button id="reset-convo" style="padding:0;border:none;background:none;"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" aria-labelledby="item-title-menu-link-reset"><title id="item-title-menu-link-reset">Reset conversation</title><path fill="#ffffff" fill-rule="evenodd" d="M3.888 11.409c.236-.38.929-.493 1.309-.153.069.06 2.607 1.98 2.607 1.98.327.239.408.795.164 1.113-.164.239-.41.318-.654.318-.163 0-.326-.08-.49-.16l-1.055-.755c.747 2.599 3.122 4.47 5.982 4.47 1.689 0 3.2-.622 4.446-1.777a.862.862 0 0 1 1.246 0 .858.858 0 0 1 0 1.244C15.93 19.2 13.885 20 11.75 20a7.97 7.97 0 0 1-7.686-5.74l-.673.964c-.156.248-.391.33-.627.33-.157 0-.314-.082-.47-.165-.315-.247-.393-.826-.158-1.157l1.75-2.824m7.563-7.41a7.969 7.969 0 0 1 7.686 5.74l.672-.964c.157-.247.392-.33.628-.33.157 0 .314.083.47.166.314.247.393.826.157 1.157 0 0-1.656 2.673-1.751 2.824-.235.379-.928.493-1.308.153a468.86 468.86 0 0 0-2.607-1.981c-.327-.238-.408-.794-.164-1.113.164-.238.408-.318.653-.318.164 0 .327.08.49.159l1.055.757c-.747-2.6-3.122-4.47-5.981-4.47-1.69 0-3.201.62-4.446 1.777a.86.86 0 0 1-1.245 0 .858.858 0 0 1 0-1.245C7.269 4.8 9.316 4 11.449 4"></path></svg></button>
+    </div>
+    <div class="chat-overlay-wrapper">
+      <div class="chat-overlay-header-mobile chat-overlay-close">
+        <img class="logo" alt="logo" />
+        <!-- <img class="chat-overlay-close" src="/close.png" alt="toggle chat overlay" /> -->
+        <svg class="chat-overlay-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <line x1="1" y1="1" x2="40" y2="40" stroke="white" stroke-width="4"></line>
+          <line x1="40" y1="1" x2="1" y2="40" stroke="white" stroke-width="4"></line>
+        </svg>
+      </div>
+      <iframe id="receiver" class="chat-overlay-close" frameborder="0" width="100%" height="100%" allow="geolocation; microphone; camera">
+        <p>Your browser does not support iframes.</p>
+      </iframe>
+      <div class="chat-overlay-header">
+        <img class="chat-overlay-header-img chat-overlay-close" alt="toggle chat overlay" />
+        <img class="chat-overlay-header-img chat-overlay-open" alt="toggle chat overlay" />
+      </div>
+    </div>
+  </div>
+  <style>
+    .chat-overlay {
+      position: fixed;
+      width: 376px;
+      height: 535px;
+      bottom: 24px;
+      right: 24px;
+      z-index: 90;
+    }
+      
+    .chat-overlay-closed .header-logo {
+      display: none;
+    }
+      
+    .chat-overlay-banner {
+      display: none;
+      height: 100px;
+      background: rgb(247, 247, 247);
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5);
+    }
+      
+    .chat-overlay-banner.chat-overlay-close {
+       display: none;
+    }
+      
+    .chat-overlay-banner-title {
+       padding-bottom: 0.2rem;
+       font-weight: 800;
+     }
+      
+    .chat-overlay-banner-helper {
+       opacity: 0.50;
+       padding-bottom: 0.8rem;
+     }
+      
+    .header-logo {
+      height: 30px;
+      background: rgb(247, 247, 247);
+      border-radius: 0.5rem 0.5rem 0 0;
+      display: none;
+    }
+      
+    .header-logo img, .header-logo svg {
+      height: inherit;
+    }
+      
+    .header-logo img.chat-overlay-close {
+      margin-left: auto;
+      align-self: center;
+      height: 50%;
+      padding: 0.5rem;
+    }
+      
+    .header-logo svg.chat-overlay-close {
+      margin-left: auto;
+      align-self: center;
+      height: 90%;
+      width: 8%;
+    }
+     
+    .chat-overlay-open {
+        height: 535px;
+    }
+     
+    .chat-overlay-closed {
+        height: 71px;
+    }
+     
+    .chat-overlay-wrapper {
+      width: 376px;
+      height: 448px;
+    }
+     
+    .chat-overlay-header-mobile {
+        display: none;
+    }
+     
+    .chat-overlay-header {
+      position: relative;
+      height: 56px;
+      width: 56px;
+      /* border: 1px solid #FFF; commented by vilas*/
+      /* background: #FFF; commented by vilas */
+      margin-left: auto;
+      border-radius: 50%;
+      box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5);
+    }
+     
+    #receiver {
+      transition: opacity 1s ease-in-out;
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5);
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+     
+    #receiver.chat-overlay-close {
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+     
+    #receiver.chat-overlay-open {
+      height: 100%;
+      opacity: 1;
+      overflow: hidden;
+    }
+     
+    .chat-overlay-header-img {
+      position: absolute;
+      max-width: 56px;
+      max-height: 56px;
+      transition: opacity 1s ease-in-out;
+      opacity: 1;
+      right: 0px;
+      left: 0px;
+      top: 0px;
+      bottom: 0px;
+      margin: auto;
+    }
+     
+    .chat-overlay-header-img.open {
+      opacity: 0;
+    }
+       
+    .absolute-cart-box {
+      display: none;
+    }
+     
+    @media only screen and (max-width: 768px) {
+      .chat-overlay {
+        width: 100%;
+        position: fixed;
+        height: 100%;
+      }
+      
+      .chat-overlay .header-logo {
+        display: none;
+      }
+     
+      .chat-overlay-header-mobile {
+        display: flex;
+        width: inherit;
+        height: 9%;
+        background: rgb(247, 247, 247);
+      }
+     
+      .chat-overlay-header-mobile img {
+        height: 30%;
+        padding: 1rem;
+        align-self: center;
+      }
+      
+      .chat-overlay-header-mobile svg.chat-overlay-close {
+        padding: 0.7rem;
+        width: 45px;
+        margin-left: auto;
+        height: 100%;
+      }
+      
+      .chat-overlay-header-mobile img.logo {
+        height: 80%;
+        padding: 1rem;
+      }
+     
+      .chat-overlay-header-mobile.chat-overlay-close {
+        display: none;
+      }
+     
+      #receiver {
+        border-radius: 0;
+      }
+     
+      #receiver.chat-overlay-close {
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+     
+      #receiver.chat-overlay-open {
+        height: 91%;
+        opacity: 1;
+        overflow: hidden;
+      }
+     
+      .chat-overlay-open {
+        height: 100%;
+        bottom: 0px;
+        right: 0px;
+      }
+     
+      .chat-overlay-closed {
+        height: 205px;;
+        bottom: 24px;
+        right: 24px;
+        width: 88%;
+      }
+     
+      .chat-overlay-wrapper {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  </style>
+  <script>
+    function receiveMessage (e) {
+       console.log('this is the event e', e.data);
+    }
+
+    window.addEventListener('message', receiveMessage);
+    var iframeElem = document.getElementById('receiver');
+
+    var resetConversation = function () {
+      iframeElem.contentWindow.postMessage({
+        'actionType': 'resetConversation',
+        'actionData': true
+      },  'https://aspendental.dev.amelia.com/Amelia/ui/aspen/');
+    };
+
+    document.getElementById('reset-convo').addEventListener('click', function () {
+      resetConversation();
+    });
+
+    var isInit = false;
+    var chatOverlayDefaultStateOpen = false;
+
+    var clientConfig = {
+      iframeSrc: 'https://aspendental.dev.amelia.com/Amelia/ui/aspen/?embed=iframe&domainCode=aspencallcenter',
+      openOnLoad: false,
+      header: {
+        backgroundColor: 'rgb(0 40 85)',
+        backgroundImage: 'https://test-sc10.aspendental.com/Assets/images/office-details/logo-aspendental-white.svg'
+      },
+      openCloseContainer: {
+        openIconSrc: './icon.png',
+        closeIconSrc: './close.png',
+        // backgroundColor: 'green'
+      },
+      banner: {
+        title: 'Amelia',
+        helper: 'Virtual Assistant',
+        description: 'Hello, I am Amelia. How can I help you today?'
+      }
+    };
+
+    // var clientConfig = {
+    //   header: {
+    //     backgroundColor: 'green',
+    //     backgroundImage: './aprilkinglogo.png'
+    //   },
+    //   openOnLoad: true
+    // };
+
+    function Config (config) {
+      this.header = config.header || {};
+      this.openCloseContainer = config.openCloseContainer || {};
+      this.openOnLoad = config.openOnLoad || false;
+      this.iframeSrc = config.iframeSrc || '';
+      this.banner = {
+        title: config.banner && config.banner.title || '',
+        helper: config.banner && config.banner.helper || '',
+        description: config.banner && config.banner.description || ''
+      };
+
+      console.log('banner', this.banner);
+    }
+
+    Config.prototype = {
+      setConfig: function () {
+        var styles = [];
+        if (this.header.backgroundImage) {
+          var headerLogo = document.querySelector('.header-logo img.logo');
+          headerLogo.src = this.header.backgroundImage;
+          var chatOverlayHeaderMobile = document.querySelector('.chat-overlay-wrapper .chat-overlay-header-mobile img.logo');
+          chatOverlayHeaderMobile.src = this.header.backgroundImage;
+        }
+
+        if (this.header.backgroundColor) {
+          styles.push('.header-logo { display: flex; background-color: ' + this.header.backgroundColor + '}'); 
+          styles.push('.chat-overlay-wrapper .chat-overlay-header-mobile { background-color: ' + this.header.backgroundColor + '}');
+        }
+
+        if (this.openCloseContainer.backgroundColor) {
+          styles.push('.chat-overlay-header { background-color: ' + this.openCloseContainer.backgroundColor + '}');
+        }
+
+        if (this.openCloseContainer.openIconSrc) {
+          var openIconSrc = document.querySelector('.chat-overlay-header .chat-overlay-open');
+          openIconSrc.src = this.openCloseContainer.openIconSrc;
+        }
+
+        if (this.openCloseContainer.closeIconSrc) {
+          var closeIconSrc = document.querySelector('.chat-overlay-header .chat-overlay-close');
+          closeIconSrc.src = this.openCloseContainer.closeIconSrc;
+        }
+
+        if (this.openOnLoad) {
+          chatOverlayDefaultStateOpen = true;
+        }
+
+        if (this.banner.title && this.banner.helper && this.banner.description) {
+          styles.push('.chat-overlay-banner { display: block; }');
+          styles.push('.chat-overlay-closed { height: 210px; }');
+          var chatOverlayBanner = document.querySelector('.chat-overlay-banner');
+          chatOverlayBanner.children[0].innerHTML = this.banner.title;
+          chatOverlayBanner.children[1].innerHTML = this.banner.helper;
+          chatOverlayBanner.children[2].innerHTML = this.banner.description;
+        }
+
+        if (styles.length) {
+          var stylesElem = document.createElement('style');
+          stylesElem.innerHTML = styles.join(' ');
+          document.body.appendChild(stylesElem);
+        }
+      }
+    }
+
+    var config = new Config(clientConfig);
+    config.setConfig();
+
+    function init () {
+      document.getElementById('receiver').src = config.iframeSrc;
+      isInit = true;
+    }
+     
+    function openChatOverlay (receiverElem, imgElemOpen, imgElemClose) {
+      if (!isInit) {
+        init();
+      }
+      document.getElementById('receiver').classList.add("chat-overlay-open");
+      document.getElementById('receiver').classList.remove("chat-overlay-close");
+      document.getElementsByClassName('chat-overlay')[0].classList.add("chat-overlay-open");
+      document.getElementsByClassName('chat-overlay')[0].classList.remove("chat-overlay-closed");
+      document.getElementsByClassName('chat-overlay-header-mobile')[0].classList.remove('chat-overlay-close');
+      document.getElementsByClassName('chat-overlay-banner')[0].classList.add('chat-overlay-close');
+      if (imgElemClose) imgElemClose.style.opacity = 1;
+      if (imgElemOpen) imgElemOpen.style.opacity = 0;
+      localStorage.setItem('chatOverlayOpen', true);
+    }
+   
+    function closeChatOverlay (receiverElem, imgElemOpen, imgElemClose) {
+      document.getElementById('receiver').classList.add("chat-overlay-close");
+      document.getElementById('receiver').classList.remove("chat-overlay-open");
+      document.getElementsByClassName('chat-overlay')[0].classList.add("chat-overlay-closed");
+      document.getElementsByClassName('chat-overlay')[0].classList.remove("chat-overlay-open");
+      document.getElementsByClassName('chat-overlay-header-mobile')[0].classList.add('chat-overlay-close');
+      document.getElementsByClassName('chat-overlay-banner')[0].classList.remove('chat-overlay-close');
+      if (imgElemOpen) imgElemOpen.style.opacity = 1;
+      if (imgElemClose) imgElemClose.style.opacity = 0;
+      localStorage.setItem('chatOverlayOpen', false);
+    }
+   
+    function toggleChatOverlay () {
+      /**
+       * Toggles opening and closing of the chatOverlay
+       * @returns - no return
+       */
+      var chatOverlayHeaderImgElemOpen = document.getElementsByClassName('chat-overlay-header-img chat-overlay-open')[0];
+      var chatOverlayHeaderImgElemClose = document.getElementsByClassName('chat-overlay-header-img chat-overlay-close')[0];
+      var receiverElem = document.getElementById('receiver');
+      if (receiverElem.classList.contains('chat-overlay-close')) {
+        openChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
+      } else {
+        closeChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
+      }
+    }
+   
+    var chatOverlayHeaderElem = document.getElementsByClassName('chat-overlay-header')[0];
+    chatOverlayHeaderElem.addEventListener('click', toggleChatOverlay);
+    var chatOverlayHeaderElemMobile = document.getElementsByClassName('chat-overlay-header-mobile')[0];
+    chatOverlayHeaderElemMobile.addEventListener('click', toggleChatOverlay);
+    var chatOverlayHeaderLogoClose = document.querySelector('.header-logo img.chat-overlay-close');
+    if (chatOverlayHeaderLogoClose) chatOverlayHeaderLogoClose.addEventListener('click', closeChatOverlay);
+    var chatOverlayHeaderLogoSvgClose = document.querySelector('.header-logo svg.chat-overlay-close');
+    if (chatOverlayHeaderLogoSvgClose) chatOverlayHeaderLogoSvgClose.addEventListener('click', closeChatOverlay);
+   
+   
+    if (typeof(Storage) !== "undefined") {
+      var chatOverlayOpen = localStorage.getItem('chatOverlayOpen');
+      var chatOverlayHeaderImgElemOpen = document.getElementsByClassName('chat-overlay-header-img chat-overlay-open')[0];
+      var chatOverlayHeaderImgElemClose = document.getElementsByClassName('chat-overlay-header-img chat-overlay-close')[0];
+      var receiverElem = document.getElementById('receiver');
+      if (chatOverlayOpen && localStorage.getItem('chatOverlayOpen') === "false")  {
+        closeChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
+      } else if (chatOverlayOpen && localStorage.getItem('chatOverlayOpen') === "true" || chatOverlayDefaultStateOpen) {
+        openChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
+      }
+    } else {
+        // Sorry! No Web Storage support..
+      console.log('No localStorage support')
+    }
+   
+  </script>
+</body>
+</html>

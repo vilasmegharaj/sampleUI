@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Index</title>
+</head>
+<body>
+<div>
+  <div class="chat-overlay-input-submit-header"><span>Click to send greeting via post message</span></div>
+  <button id="chatOverlayInputSubmit" type="button">Send greeting to Chat Overlay</button>
+</div>
+  <div>
+      <button id="close-convo">Close Conversation</button>
+  </div>
+  <div>
+      <button id="reset-convo">Reset Conversation</button>
+  </div>
+<div class="chat-overlay chat-overlay-closed">
+   <div class="chat-overlay-banner">
+      <div class="chat-overlay-banner-title">Amelia</div>
+      <div class="chat-overlay-banner-helper">Virtual Assistant</div>
+      <div class="chat-overlay-banner-description">Hi there! I'm available to assist you with anything you need. Don't be shy!</div>
+  </div>
+  <div class="header-logo">
+     <img class="logo" src="./logo.png" alt="logo" />
+  </div>
+  <div class="chat-overlay-wrapper">
+    <div class="chat-overlay-header-mobile close">
+      <img class="logo" src="./logo.png" alt="logo" />
+      <img class="close" src="./close.png" alt="toggle chat overlay" />
+    </div>
+    <iframe id="receiver" class="close no-scroll" frameborder="0" width="100%" height="100%" allow="geolocation; microphone; camera">
+      <p>Your browser does not support iframes.</p>
+    </iframe>
+    <div class="chat-overlay-header">
+      <img class="chat-overlay-header-img close" src="./close.png" alt="toggle chat overlay" />
+      <img class="chat-overlay-header-img open" src="./icon.png" alt="toggle chat overlay" />
+    </div>
+  </div>
+</div>
+<style>
+.chat-overlay {
+  position: fixed;
+  width: 376px;
+  height: 535px;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+}
+  
+.chat-overlay-closed .header-logo {
+  display: none;
+}
+  
+.chat-overlay-banner {
+  height: 100px;
+  background: rgb(247, 247, 247);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5);
+}
+  
+.chat-overlay-banner.close {
+   display: none;
+}
+  
+.chat-overlay-banner-title {
+   padding-bottom: 0.2rem;
+   font-weight: 800;
+ }
+  
+.chat-overlay-banner-helper {
+   opacity: 0.50;
+   padding-bottom: 0.8rem;
+ }
+  
+.header-logo {
+  height: 30px;
+  background: #31ba4b;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+  
+.header-logo img {
+  height: inherit; 
+}
+
+.chat-overlay-input-submit-header {
+  padding: 1rem;
+}
+
+#chatOverlayInputSubmit {
+  cursor: pointer;
+  color: #FFF;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: #000;
+}
+ 
+.chat-overlay-open {
+    height: 535px;
+}
+ 
+.chat-overlay-closed {
+    height: 203px;
+ 
+}
+ 
+.chat-overlay-wrapper {
+  width: 376px;
+  height: 448px;
+}
+ 
+.chat-overlay-header-mobile {
+    display: none;
+}
+ 
+.chat-overlay-header {
+  position: relative;
+  height: 56px;
+  width: 56px;
+  border: 1px solid black;
+  background: #000;
+  margin-left: auto;
+  border-radius: 50%;
+  box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5);
+}
+ 
+#receiver {
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+ 
+#receiver.close {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+ 
+#receiver.open {
+  height: 100%;
+  opacity: 1;
+  overflow: hidden;
+}
+ 
+.chat-overlay-header-img {
+  position: absolute;
+  max-width: 14px;
+  max-height: 14px;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+}
+ 
+.chat-overlay-header-img.open {
+  opacity: 0;
+}
+   
+.absolute-cart-box {
+  display: none;
+}
+  
+.resizer {
+  width: 10px;
+  height: 10px;
+  background: blue;
+  position:absolute;
+  right: 0;
+  bottom: 0;
+  cursor: se-resize;
+ }
+ 
+@media only screen and (max-width: 768px) {
+  .chat-overlay {
+    width: 100%;
+    position: fixed;
+    height: 100%;
+  }
+  
+  .header-logo {
+    display: none;
+  }
+ 
+  .chat-overlay-header-mobile {
+    display: flex;
+    width: inherit;
+    height: 9%;
+    background: #31ba4b;
+  }
+ 
+  .chat-overlay-header-mobile img {
+    height: 30%;
+    padding: 1rem;
+    align-self: center;
+  }
+  
+  .chat-overlay-header-mobile img:last-of-type {
+    margin-left: auto;
+  }
+  
+  .chat-overlay-header-mobile img.logo {
+    height: 80%;
+    padding: 1rem;
+  }
+ 
+  .chat-overlay-header-mobile.close {
+    display: none;
+  }
+ 
+  #receiver {
+    border-radius: 0;
+  }
+ 
+  #receiver.close {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+ 
+  #receiver.open {
+    height: 91%;
+    opacity: 1;
+    overflow: hidden;
+  }
+ 
+  .chat-overlay-open {
+    height: 100%;
+    bottom: 0px;
+    right: 0px;
+  }
+ 
+  .chat-overlay-closed {
+    height: 205px;;
+    bottom: 24px;
+    right: 24px;
+    width: 88%;
+  }
+ 
+  .chat-overlay-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+}
+</style>
+ <script>
+   function receiveMessage (e) {
+       console.log('this is the event e', e.data);
+   }
+   
+   window.addEventListener('message', receiveMessage);
+   
+   var iframeElem = document.getElementById('receiver');
+   document.getElementById('chatOverlayInputSubmit').addEventListener('click', function () {
+    iframeElem.contentWindow.postMessage({
+      'actionType': 'ameliaSay',
+      'actionData': 'Hi there'
+    }, 'https://ameliav4.dev.amelia.com/Amelia/ui/raul/');
+  });
+   
+   var endConversation = function () {
+     iframeElem.contentWindow.postMessage({
+      'actionType': 'endConversation',
+      'actionData': true
+    }, 'https://ameliav4.dev.amelia.com/Amelia/ui/raul/');
+   };
+   
+   var resetConversation = function () {
+     iframeElem.contentWindow.postMessage({
+      'actionType': 'resetConversation',
+      'actionData': true
+    }, 'https://ameliav4.dev.amelia.com/Amelia/ui/raul/');
+   };
+   
+   document.getElementById('close-convo').addEventListener('click', function () {
+    endConversation();
+  });
+   
+   document.getElementById('reset-convo').addEventListener('click', function () {
+    resetConversation();
+  });
+   
+   window.onbeforeunload = function () {
+     endConversation();
+     // return null; // No prompt
+     return ''; // Yes with prompt
+   }
+  // https://ipsoft-amelia-uiux-v3.ipsoft.com/Amelia/ui/raul/
+  // https://ameliav4.dev.amelia.com/Amelia/ui/raul/
+   
+  var isInit = false;
+  function init () {
+    console.log('i should be in here once');
+//     document.getElementById('receiver').src = 'https://ameliav4.dev.amelia.com/Amelia/ui/raul/';
+        document.getElementById('receiver').src = 'https://ameliav4.dev.amelia.com/Amelia/ui/raul/?domainCode=gateway_test&embed=iframe';
+//     document.getElementById('receiver').src = 'https://onelaw-v4.dev.amelia.com/Amelia/ui/AmeliaCust/?domainCode=onelaw&attrib_urlPath=home-pages'
+    // document.getElementById('receiver').src = 'https://onelaw-v4.dev.amelia.com/Amelia/ui/ClientPortalAvatar/';
+    isInit = true;
+  }
+   
+  function openChatOverlay (receiverElem, imgElemOpen, imgElemClose) {
+    if (!isInit) {
+      init();
+    }
+    document.getElementById('receiver').classList.add("open");
+    document.getElementById('receiver').classList.remove("close");
+    document.getElementsByClassName('chat-overlay')[0].classList.add("chat-overlay-open");
+    document.getElementsByClassName('chat-overlay')[0].classList.remove("chat-overlay-closed");
+    document.getElementsByClassName('chat-overlay-header-mobile')[0].classList.remove('close');
+    document.getElementsByClassName('chat-overlay-banner')[0].classList.add('close');
+    imgElemClose.style.opacity = 1;
+    imgElemOpen.style.opacity = 0;
+    localStorage.setItem('chatOverlayOpen', true);
+  }
+ 
+  function closeChatOverlay (receiverElem, imgElemOpen, imgElemClose) {
+    document.getElementById('receiver').classList.add("close");
+    document.getElementById('receiver').classList.remove("open");
+    document.getElementsByClassName('chat-overlay')[0].classList.add("chat-overlay-closed");
+    document.getElementsByClassName('chat-overlay')[0].classList.remove("chat-overlay-open");
+    document.getElementsByClassName('chat-overlay-header-mobile')[0].classList.add('close');
+    document.getElementsByClassName('chat-overlay-banner')[0].classList.remove('close');
+    imgElemOpen.style.opacity = 1;
+    imgElemClose.style.opacity = 0;
+    localStorage.setItem('chatOverlayOpen', false);
+  }
+ 
+  function toggleChatOverlay () {
+    /**
+     * Toggles opening and closing of the chatOverlay
+     * @returns - no return
+     */
+    var chatOverlayHeaderImgElemOpen = document.getElementsByClassName('chat-overlay-header-img open')[0];
+    var chatOverlayHeaderImgElemClose = document.getElementsByClassName('chat-overlay-header-img close')[0];
+    var receiverElem = document.getElementById('receiver');
+    if (receiverElem.classList.contains('close')) {
+      openChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
+    } else {
+      closeChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
+    }
+  }
+   
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return false;
+  }
+   
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+  var chatOverlayHeaderElem = document.getElementsByClassName('chat-overlay-header')[0];
+  chatOverlayHeaderElem.addEventListener('click', toggleChatOverlay);
+  var chatOverlayHeaderElemMobile = document.getElementsByClassName('chat-overlay-header-mobile')[0];
+  chatOverlayHeaderElemMobile.addEventListener('click', toggleChatOverlay);
+ 
+ 
+  if (typeof(Storage) !== "undefined") {
+    var chatOverlayOpen = localStorage.getItem('chatOverlayOpen');
+    var chatOverlayDefaultStateClosed = true;
+    var chatOverlayHeaderImgElemOpen = document.getElementsByClassName('chat-overlay-header-img open')[0];
+    var chatOverlayHeaderImgElemClose = document.getElementsByClassName('chat-overlay-header-img close')[0];
+    var receiverElem = document.getElementById('receiver');
+    if (chatOverlayOpen && localStorage.getItem('chatOverlayOpen') !== "true") {
+      closeChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
+    } else if (chatOverlayOpen && localStorage.getItem('chatOverlayOpen') !== "false") {
+      openChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
+    }
+  } else {
+      // Sorry! No Web Storage support..
+    console.log('No localStorage support')
+  }
+   
+  
+   
+   
+   /// Resize overlay
+//    var p = document.querySelector('p');
+//    var p = document.querySelector('.chat-overlay-wrapper');
+
+//     p.addEventListener('click', function init() {
+//         p.removeEventListener('click', init, false);
+//         p.className = p.className + ' resizable';
+//         var resizer = document.createElement('div');
+//         resizer.className = 'resizer';
+//         p.appendChild(resizer);
+//         resizer.addEventListener('mousedown', initDrag, false);
+//     }, false);
+
+//     var startX, startY, startWidth, startHeight;
+
+//     function initDrag(e) {
+//        startX = e.clientX;
+//        startY = e.clientY;
+//        console.log('document.defaultView', document.defaultView);
+//        startWidth = parseInt(document.defaultView.getComputedStyle(p).width, 10);
+//        startHeight = parseInt(document.defaultView.getComputedStyle(p).height, 10);
+//        console.log('documentElement', document.documentElement);
+//        document.documentElement.addEventListener('mousemove', doDrag, false);
+//        document.documentElement.addEventListener('mouseup', stopDrag, false);
+//     }
+
+//     function doDrag(e) {
+//        p.style.width = (startWidth + e.clientX - startX) + 'px';
+//        p.style.height = (startHeight + e.clientY - startY) + 'px';
+//     }
+
+//     function stopDrag(e) {
+//         document.documentElement.removeEventListener('mousemove', doDrag, false);    document.documentElement.removeEventListener('mouseup', stopDrag, false);
+//     }
+   /// End of resize overlay
+ 
+</script>
+</body>
+</html>
