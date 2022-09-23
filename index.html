@@ -19,18 +19,18 @@
        <img class="logo" alt="logo" />
         <!-- <img class="chat-overlay-close" src="/close.png" alt="toggle chat overlay" /> -->
         <svg class="chat-overlay-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <line x1="4" y1="4" x2="20" y2="20" stroke="white" stroke-width="3"></line>
-          <line x1="20" y1="4" x2="4" y2="20" stroke="white" stroke-width="3"></line>
+          <line x1="4" y1="4" x2="20" y2="20" stroke="black" stroke-width="3"></line>
+          <line x1="20" y1="4" x2="4" y2="20" stroke="black" stroke-width="3"></line>
         </svg>
-        <button onclick="resetConversation()" style="padding:0;border:none;background:none;"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" aria-labelledby="item-title-menu-link-reset"><title id="item-title-menu-link-reset">Reset conversation</title><path fill="#ffffff" fill-rule="evenodd" d="M3.888 11.409c.236-.38.929-.493 1.309-.153.069.06 2.607 1.98 2.607 1.98.327.239.408.795.164 1.113-.164.239-.41.318-.654.318-.163 0-.326-.08-.49-.16l-1.055-.755c.747 2.599 3.122 4.47 5.982 4.47 1.689 0 3.2-.622 4.446-1.777a.862.862 0 0 1 1.246 0 .858.858 0 0 1 0 1.244C15.93 19.2 13.885 20 11.75 20a7.97 7.97 0 0 1-7.686-5.74l-.673.964c-.156.248-.391.33-.627.33-.157 0-.314-.082-.47-.165-.315-.247-.393-.826-.158-1.157l1.75-2.824m7.563-7.41a7.969 7.969 0 0 1 7.686 5.74l.672-.964c.157-.247.392-.33.628-.33.157 0 .314.083.47.166.314.247.393.826.157 1.157 0 0-1.656 2.673-1.751 2.824-.235.379-.928.493-1.308.153a468.86 468.86 0 0 0-2.607-1.981c-.327-.238-.408-.794-.164-1.113.164-.238.408-.318.653-.318.164 0 .327.08.49.159l1.055.757c-.747-2.6-3.122-4.47-5.981-4.47-1.69 0-3.201.62-4.446 1.777a.86.86 0 0 1-1.245 0 .858.858 0 0 1 0-1.245C7.269 4.8 9.316 4 11.449 4"></path></svg></button>
+        <button onclick="resetConversation()" style="padding:0;border:none;background:none;"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" aria-labelledby="item-title-menu-link-reset"><title id="item-title-menu-link-reset">Reset conversation</title><path fill="#000000" fill-rule="evenodd" d="M3.888 11.409c.236-.38.929-.493 1.309-.153.069.06 2.607 1.98 2.607 1.98.327.239.408.795.164 1.113-.164.239-.41.318-.654.318-.163 0-.326-.08-.49-.16l-1.055-.755c.747 2.599 3.122 4.47 5.982 4.47 1.689 0 3.2-.622 4.446-1.777a.862.862 0 0 1 1.246 0 .858.858 0 0 1 0 1.244C15.93 19.2 13.885 20 11.75 20a7.97 7.97 0 0 1-7.686-5.74l-.673.964c-.156.248-.391.33-.627.33-.157 0-.314-.082-.47-.165-.315-.247-.393-.826-.158-1.157l1.75-2.824m7.563-7.41a7.969 7.969 0 0 1 7.686 5.74l.672-.964c.157-.247.392-.33.628-.33.157 0 .314.083.47.166.314.247.393.826.157 1.157 0 0-1.656 2.673-1.751 2.824-.235.379-.928.493-1.308.153a468.86 468.86 0 0 0-2.607-1.981c-.327-.238-.408-.794-.164-1.113.164-.238.408-.318.653-.318.164 0 .327.08.49.159l1.055.757c-.747-2.6-3.122-4.47-5.981-4.47-1.69 0-3.201.62-4.446 1.777a.86.86 0 0 1-1.245 0 .858.858 0 0 1 0-1.245C7.269 4.8 9.316 4 11.449 4"></path></svg></button>
     </div>
     <div class="chat-overlay-wrapper">
       <div class="chat-overlay-header-mobile chat-overlay-close">
         <img class="logo" alt="logo" />
         <!-- <img class="chat-overlay-close" src="/close.png" alt="toggle chat overlay" /> -->
         <svg class="chat-overlay-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <line x1="1" y1="1" x2="40" y2="40" stroke="white" stroke-width="4"></line>
-          <line x1="40" y1="1" x2="1" y2="40" stroke="white" stroke-width="4"></line>
+          <line x1="1" y1="1" x2="40" y2="40" stroke="black" stroke-width="4"></line>
+          <line x1="40" y1="1" x2="1" y2="40" stroke="black" stroke-width="4"></line>
         </svg>
       </div>
       <iframe id="receiver" class="chat-overlay-close" frameborder="0" width="100%" height="100%" allow="geolocation; microphone; camera">
@@ -272,11 +272,10 @@
     var chatOverlayDefaultStateOpen = false;
 
     var clientConfig = {
-//       iframeSrc: 'https://blr-amelia-demo1-v3.ipsoft.com/Amelia/ui/vilas/?embed=iframe&domainCode=vilas',
-      iframeSrc: 'https://aspendental.dev.amelia.com/Amelia/ui/aspen/?embed=iframe&domainCode=aspencallcenter',
+      iframeSrc: 'https://blr-amelia-demo1-v3.ipsoft.com/Amelia/ui/vilas/?embed=iframe&domainCode=vilas',
       openOnLoad: false,
       header: {
-        backgroundColor: 'rgb(0 40 85)',
+        backgroundColor: 'rgb(2444 244 244)',
         backgroundImage: './logo.png'
       },
       openCloseContainer: {
